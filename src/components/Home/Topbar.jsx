@@ -1,24 +1,32 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { X, User, Lock, AlignRight } from "react-feather";
+import { X, Lock, AlignRight } from "react-feather";
 import { navData } from "@/data/navData";
 import AppButton from "@/UI/AppButton";
 import Image from "next/image";
-import SignInAndSignUp from "../Authentication";
+import SignInAndSignUp from "../authentication";
+import useMediaQuery from "@/hooks/useMediaQuery";
+import { usePathname } from "next/navigation";
 
 const Topbar = () => {
+  const pathname = usePathname();
+  const isMobileScreen = useMediaQuery("(max-width: 768px");
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [speDropdownOpen, setSpeDropdownOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const links = (
     <>
       {navData.map((item, index) => (
         <div key={index} className="relative group">
           <Link
             href={item.href}
-            className="hover:text-blue-600 flex gap-1 items-center"
+            className={`hover:text-brand font-medium flex gap-1 items-center ${
+              pathname === item?.href ? "text-brand" : ""
+            }`}
           >
             {item.label}{" "}
             {item.icon && <span className="ml-1">{item.icon}</span>}
@@ -60,7 +68,9 @@ const Topbar = () => {
                 }
               }
             }}
-            className="hover:text-blue-600 flex gap-1 items-center"
+            className={`hover:text-blue-600 flex gap-1 items-center ${
+              pathname === item?.href ? "text-blue-600" : ""
+            }`}
           >
             {item.label} {item?.icon}
           </Link>
@@ -96,7 +106,11 @@ const Topbar = () => {
   return (
     <nav className="bg-white ">
       <div className="px-4 lg:px-24 flex items-center justify-between text-sm md:text-[15px] py-4">
-        <div className="flex gap-4 items-center">
+        <div
+          className={`flex gap-4 items-center ${
+            isMobileScreen && "w-full justify-between"
+          }`}
+        >
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-5xl text-blue-500"
@@ -109,12 +123,13 @@ const Topbar = () => {
           <div className="">
             <Link href="/">
               <Image
-                src={"/assets/MEDICARE_HALF.png"}
+                src={"/assets/logo.jpg"}
                 alt="logo"
                 width={175}
                 height={80}
                 quality={100}
                 priority={true}
+                className="w-40 h-20 object-contain"
               />
             </Link>
           </div>
@@ -129,18 +144,11 @@ const Topbar = () => {
         <div className="hidden md:flex items-center space-x-2 md:space-x-4">
           <AppButton
             withoutHrefBtn
-            text="Register"
-            icon={User}
-            callback={() => setIsModalOpen(true)}
-            customStyles={"hover:bg-blue-500 hover:text-white px-2"}
-          />
-          <AppButton
-            withoutHrefBtn
             text="Login"
             icon={Lock}
             callback={() => setIsModalOpen(true)}
             customStyles={
-              "bg-blue-500 text-white hover:bg-white hover:text-blue-500 border-blue-500 px-2"
+              "bg-brand text-white hover:bg-white hover:text-brand 500 px-2"
             }
           />
         </div>
@@ -148,20 +156,13 @@ const Topbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg p-4 space-y-4">
+        <div className="md:hidden bg-white shadow-lg p-4 space-y-4 transform transition-transform duration-300 ease-in-out">
           {smallDeviceLinks}
-
           {/* Mobile Buttons */}
-          <div className="flex flex-col space-y-2">
-            <Link
-              href="/signUp"
-              className="hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md border font-semibold flex items-center gap-2 duration-300"
-            >
-              <User /> Register
-            </Link>
+          <div className="flex w-[10rem] flex-col space-y-2">
             <Link
               href="/login"
-              className="bg-blue-500 text-white hover:bg-white hover:text-blue-600 px-4 py-2 rounded-md border font-semibold flex items-center gap-2 duration-300"
+              className="bg-brand text-white hover:bg-white hover:text-brand px-4 py-2 rounded-md border font-semibold flex items-center gap-2 duration-300"
             >
               <Lock className="font-extra-bold text-16" /> Login
             </Link>

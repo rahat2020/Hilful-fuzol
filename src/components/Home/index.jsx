@@ -1,10 +1,12 @@
 "use client";
-import HeaderSlider from "./HeaderSlider";
+import HeaderSlider from "@/components/home/HeaderSlider";
+import Testimonials from "@/components/home/Testimonials";
 
 const Homepage = () => {
   return (
     <div>
       <HeaderSlider />
+      <Testimonials />
     </div>
   );
 };

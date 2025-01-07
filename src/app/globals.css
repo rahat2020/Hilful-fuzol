@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --brand-color: #008a35;
+  --brand-link-color: #004e92;
+  --border-light: #d8e0ed;
+  --border: #b7b7b7;
+  --font-montserrat: "Montserrat";
+}

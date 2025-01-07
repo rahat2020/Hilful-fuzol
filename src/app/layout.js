@@ -2,9 +2,9 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import { Suspense } from "react";
-import Topbar from "@/components/Home/Topbar";
+import Topbar from "@/components/home/Topbar";
 import GoToTop from "@/UI/GotoTop";
-import Footer from "@/components/Home/Footer";
+import Footer from "@/components/home/Footer";
 import { StoreProvider } from "@/redux/StoreProvider";
 
 const montserrat = Montserrat({

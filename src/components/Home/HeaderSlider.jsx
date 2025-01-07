@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import Image from "next/image";
 
 const HeaderSlider = () => {
   const pagination = {
@@ -16,22 +17,40 @@ const HeaderSlider = () => {
   };
 
   return (
-    <div>
+    <div className="h-screen w-full">
       <>
         <Swiper
           pagination={pagination}
           modules={[Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>
+            <div className="flex w-full flex-col md:flex-row justify-between items-center px-8 bg-red">
+              <div className="flex bg-white flex-col px-8 w-[50%]">
+                <h1 className="text-4xl font-bold text-brand">
+                  Welcome to Our Website
+                </h1>
+                <p className="text-gray-600 mt-4">
+                  Discover our amazing content and services.
+                </p>
+                <button className="bg-brand text-white py-2 px-4 rounded">
+                  Get Started
+                </button>
+              </div>
+
+              <div className="mt-8 md:mt-0 w-[50%]">
+                <Image
+                  src="/assets/program-5.jpg"
+                  alt="programs"
+                  loading="lazy"
+                  width={500}
+                  height={500}
+                  className=" object-cover rounded-lg shadow-md"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
         </Swiper>
       </>
     </div>
