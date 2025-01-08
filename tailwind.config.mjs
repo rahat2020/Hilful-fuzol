@@ -28,6 +28,10 @@ module.exports = {
       },
     },
     extend: {
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        "spin-slow": "spin 20s linear infinite",
+      },
       keyframes: {
         stripes: {
           "0%": {
@@ -36,6 +40,14 @@ module.exports = {
           "100%": {
             backgroundPosition: "160px 0",
           },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        twinkle: {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0.5 },
         },
       },
       colors: {

@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Hilful fozol",
+  title: "Hilful Fuzol",
   description: "An Islamic social organization.",
 };
 

@@ -1,58 +1,77 @@
-"use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ArrowRight } from "react-feather";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
-// import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import AppButton from "@/UI/AppButton";
+import { slidersData } from "@/data/slidersData";
 
 const HeaderSlider = () => {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
+  const handleCallback = () => {
+    console.log("Button Clicked");
   };
 
   return (
     <div className="h-screen w-full">
-      <>
-        <Swiper
-          pagination={pagination}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <div className="flex w-full flex-col md:flex-row justify-between items-center px-8 bg-red">
-              <div className="flex bg-white flex-col px-8 w-[50%]">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        pagination={{ clickable: true }}
+        grabCursor={true}
+        className="mySwiper"
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          468: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        }}
+      >
+        {slidersData?.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="flex w-full h-[28rem] flex-col md:flex-row justify-between items-center px-8">
+              <div className="flex bg-white flex-col justify-center px-8 py-4 w-[50%]">
                 <h1 className="text-4xl font-bold text-brand">
-                  Welcome to Our Website
+                  {slide?.title}
                 </h1>
-                <p className="text-gray-600 mt-4">
-                  Discover our amazing content and services.
-                </p>
-                <button className="bg-brand text-white py-2 px-4 rounded">
-                  Get Started
-                </button>
+                <p className="text-gray-600 py-4">{slide?.description}</p>
+                <AppButton
+                  withoutHrefBtn
+                  text="View more"
+                  icon={ArrowRight}
+                  callback={() => handleCallback()}
+                  customStyles="bg-brand w-[30%] text-white hover:bg-white hover:text-brand 500 px-2"
+                />
               </div>
 
-              <div className="mt-8 md:mt-0 w-[50%]">
+              <div className="mt-8 md:mt-0 w-[50%] flex justify-center">
                 <Image
-                  src="/assets/program-5.jpg"
+                  src={slide?.image || "/assets/program-1.jpg"}
                   alt="programs"
                   loading="lazy"
                   width={500}
                   height={500}
-                  className=" object-cover rounded-lg shadow-md"
+                  className="object-cover rounded-lg shadow-md"
                 />
               </div>
             </div>
           </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-        </Swiper>
-      </>
+        ))}
+      </Swiper>
     </div>
   );
 };

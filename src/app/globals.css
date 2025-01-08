@@ -9,3 +9,7 @@
   --border: #b7b7b7;
   --font-montserrat: "Montserrat";
 }
+
+.swiper-pagination-bullet-active {
+  background-color: var(--brand-color) !important;
+}
