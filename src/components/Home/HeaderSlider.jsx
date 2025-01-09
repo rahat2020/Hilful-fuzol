@@ -54,7 +54,7 @@ const HeaderSlider = () => {
                   text="View more"
                   icon={ArrowRight}
                   callback={() => handleCallback()}
-                  customStyles="bg-brand w-[30%] text-white hover:bg-white hover:text-brand 500 px-2"
+                  customStyles="bg-brand w-[30%] text-white 500 px-2"
                 />
               </div>
 

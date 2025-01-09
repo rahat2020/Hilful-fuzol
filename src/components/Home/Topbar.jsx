@@ -147,9 +147,7 @@ const Topbar = () => {
             text="Login"
             icon={Lock}
             callback={() => setIsModalOpen(true)}
-            customStyles={
-              "bg-brand text-white hover:bg-white hover:text-brand 500 px-2"
-            }
+            customStyles={"bg-brand text-white hover:bg-green-600 px-2"}
           />
         </div>
       </div>
