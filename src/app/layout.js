@@ -3,9 +3,9 @@ import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 import { Suspense } from "react";
 import GoToTop from "@/UI/GotoTop";
-import { StoreProvider } from "@/redux/StoreProvider";
 import Topbar from "@/components/home/Topbar";
 import Footer from "@/components/home/Footer";
+import { StoreProvider } from "@/redux/StoreProvider";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

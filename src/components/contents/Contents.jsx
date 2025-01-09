@@ -19,7 +19,7 @@ const Contents = () => {
     if (typeof window !== "undefined") {
       setHasWindow(true);
     }
-  }, []);
+  }, [hasWindow]);
 
   return (
     <div>
