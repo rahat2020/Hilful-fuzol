@@ -1,5 +1,4 @@
-import Homepage from "@/components/home";
-import React from "react";
+import Homepage from "../components/Home";
 
 const MainPage = () => <Homepage />;
 export default MainPage;
