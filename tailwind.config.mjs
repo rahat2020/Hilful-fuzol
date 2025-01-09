@@ -148,6 +148,9 @@ module.exports = {
         28: "28px",
         32: "32px",
         40: "40px",
+        44: "44px",
+        48: "48px",
+        56: "56px",
       },
       placeholderColor: {
         gray: "#D8E0ED",

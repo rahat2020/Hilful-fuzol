@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Award, Users, TrendingUp, Mail } from "react-feather";
+import { ChevronDown, Award, Users, TrendingUp } from "react-feather";
 import Faqs from "./Faqs";
 import { membersData } from "@/data/membersData";
 

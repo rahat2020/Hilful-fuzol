@@ -9,6 +9,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import AppButton from "@/UI/AppButton";
 import { slidersData } from "@/data/slidersData";
+import { truncateText } from "@/utils/appHelpers";
 
 const HeaderSlider = () => {
   const handleCallback = () => {
@@ -43,32 +44,34 @@ const HeaderSlider = () => {
       >
         {slidersData?.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="flex w-full h-[28rem] flex-col md:flex-row justify-between items-center px-8">
-              <div className="flex bg-white flex-col justify-center px-8 py-4 w-[50%]">
-                <h1 className="text-4xl font-bold text-brand">
-                  {slide?.title}
-                </h1>
-                <p className="text-gray-600 py-4">{slide?.description}</p>
-                <AppButton
-                  withoutHrefBtn
-                  text="View more"
-                  icon={ArrowRight}
-                  callback={() => handleCallback()}
-                  customStyles="bg-brand w-[30%] text-white 500 px-2"
-                />
+            <section className="relative h-[70vh] md:h-[80vh] lg:h-[90vh]">
+              <Image
+                src={slide?.image || "/assets/program-1.jpg"}
+                alt="Hero Image"
+                layout="fill"
+                loading="lazy"
+                objectFit="cover"
+                className="brightness-50"
+              />
+              <div className="absolute inset-0 flex items-center justify-center pt-28 px-4 bg-gradient-to-t from-gray-900 to-transparent">
+                <div className="text-center text-white">
+                  <h1 className="text-20 md:text-40 lg:text-6xl font-bold mb-4">
+                    {truncateText(slide?.title, 55)}
+                  </h1>
+                  <p className="text-14 md:text-2xl mb-4">
+                    {truncateText(slide?.description, 60)}
+                  </p>
+                  <AppButton
+                    withoutHrefBtn
+                    text="View more"
+                    icon={ArrowRight}
+                    callback={() => handleCallback()}
+                    customBtnStyles="flex items-center justify-center"
+                    customStyles="bg-brand justify-center text-white 500 px-2"
+                  />
+                </div>
               </div>
-
-              <div className="mt-8 md:mt-0 w-[50%] flex justify-center">
-                <Image
-                  src={slide?.image || "/assets/program-1.jpg"}
-                  alt="programs"
-                  loading="lazy"
-                  width={500}
-                  height={500}
-                  className="object-cover rounded-lg shadow-md"
-                />
-              </div>
-            </div>
+            </section>
           </SwiperSlide>
         ))}
       </Swiper>

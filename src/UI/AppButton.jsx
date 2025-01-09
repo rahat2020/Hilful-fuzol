@@ -15,7 +15,7 @@ const AppButton = ({
   callback = () => {},
 }) => {
   return (
-    <div className={`flex items-center  font-semibold duration-300`}>
+    <div className={`font-semibold duration-300 ${customBtnStyles}`}>
       {withoutHrefBtn ? (
         <button
           onClick={() => callback()}
