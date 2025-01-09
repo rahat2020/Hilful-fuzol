@@ -1,5 +1,6 @@
 "use client";
-import AppSpinner from "@/UI/Appspinner";
+
+import AppSpinner from "../UI/Appspinner";
 
 const Loading = () => {
   return <AppSpinner />;

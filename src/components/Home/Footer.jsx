@@ -1,16 +1,8 @@
 "use client";
-import { getCurrentYear } from "@/utils/appHelpers";
+import { getCurrentYear } from "@/src/utils/appHelpers";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  Map,
-  Phone,
-  Twitter,
-} from "react-feather";
+import { Facebook, Mail, Map, Phone } from "react-feather";
 
 const Footer = () => {
   return (

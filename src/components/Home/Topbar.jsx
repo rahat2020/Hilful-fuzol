@@ -2,12 +2,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { X, Lock, AlignRight } from "react-feather";
-import { navData } from "@/data/navData";
-import AppButton from "@/UI/AppButton";
 import Image from "next/image";
 import SignInAndSignUp from "../authentication";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { usePathname } from "next/navigation";
+import { navData } from "@/src/data/navData";
+import AppButton from "@/src/UI/AppButton";
 
 const Topbar = () => {
   const pathname = usePathname();

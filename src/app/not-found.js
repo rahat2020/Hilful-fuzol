@@ -1,13 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
-import { Home, RefreshCw } from "react-feather";
-import { CircleSvg } from "@/UI/customSVG/circle";
+import { Home } from "react-feather";
+import { CircleSvg } from "../UI/customSVG/circle";
 
 export default function NotFound() {
-  const [isLoading, setIsLoading] = useState(false);
-
   useEffect(() => {
     const stars = Array.from({ length: 50 }).map((_, i) => ({
       id: i,
@@ -28,13 +26,6 @@ export default function NotFound() {
       starsContainer.appendChild(el);
     });
   }, []);
-
-  const handleRefresh = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
-  };
 
   return (
     <div className="relative flex items-center justify-center min-h-screen overflow-hidden bg-gradient-to-br from-indigo-900 via-green-900 to-green-900">
