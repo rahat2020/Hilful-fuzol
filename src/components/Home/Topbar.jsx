@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { X, Lock, AlignRight } from "react-feather";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import SignInAndSignUp from "@/components/authentication";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import SignInAndSignUp from "../authentication";
 import { navData } from "@/data/navData";
 import AppButton from "@/UI/AppButton";
 
