@@ -138,6 +138,8 @@ module.exports = {
         extrabold: "800",
       },
       fontSize: {
+        8: "8px",
+        10: "10px",
         12: "12px",
         13: "13px",
         14: "14px",

@@ -105,17 +105,27 @@ const Topbar = () => {
           >
             {isMobileMenuOpen ? <X /> : <AlignRight />}
           </button>
-
+          <div className="md:hidden w-full">
+            <p className="text-14 font-bold text-center">
+              খুরুশিয়া হিলফুল ফুযুল পরিষদ
+            </p>
+            <p className="text-13 font-bold text-brand text-center">
+              Khurishia Hilful Fuzol Parishod
+            </p>
+            <p className="text-10 text-center font-bold text-gray-700">
+              (It's a social, vuluntary, educational org.)
+            </p>
+          </div>
           {/* Logo */}
           <Link href="/">
             <Image
               src={"/assets/logo.jpg"}
               alt="logo"
-              width={175}
-              height={80}
+              width={100}
+              height={50}
               quality={100}
               priority={true}
-              className="w-40 h-20 object-contain"
+              className="w-20 h-16 object-contain"
             />
           </Link>
         </div>
