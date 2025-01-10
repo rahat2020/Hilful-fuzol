@@ -1,7 +1,7 @@
 "use client";
-import HeaderSlider from "@/components/home/HeaderSlider";
 import Testimonials from "@/components/home/Testimonials";
 import Contents from "@/components/contents/Contents";
+import HeaderSlider from "./HeaderSlider";
 
 const Homepage = () => {
   return (

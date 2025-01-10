@@ -3,11 +3,11 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { X, Lock, AlignRight } from "react-feather";
 import Image from "next/image";
-import SignInAndSignUp from "../authentication";
 import { usePathname } from "next/navigation";
-import { navData } from "@/src/data/navData";
-import AppButton from "@/src/UI/AppButton";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import SignInAndSignUp from "../authentication";
+import { navData } from "@/data/navData";
+import AppButton from "@/UI/AppButton";
 
 const Topbar = () => {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ const Topbar = () => {
 
   const links = (
     <>
-      {navData.map((item, index) => (
+      {navData?.map((item, index) => (
         <div key={index} className="relative group">
           <Link
             href={item.href}

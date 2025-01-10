@@ -1,5 +1,5 @@
 "use client";
-import { getCurrentYear } from "@/src/utils/appHelpers";
+import { getCurrentYear } from "@/utils/appHelpers";
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Mail, Map, Phone } from "react-feather";
@@ -20,6 +20,7 @@ const Footer = () => {
                   width={100}
                   height={80}
                   quality={100}
+                  loading="lazy"
                   priority={true}
                 />
               </Link>
