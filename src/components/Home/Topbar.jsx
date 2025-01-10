@@ -55,8 +55,8 @@ const Topbar = () => {
           <Link
             href={item?.href}
             onClick={() => setIsMobileMenuOpen(false)}
-            className={`hover:text-blue-600 flex gap-1 items-center ${
-              pathname === item?.href ? "text-blue-600" : ""
+            className={`hover:text-brand flex gap-1 items-center ${
+              pathname === item?.href ? "text-brand" : ""
             }`}
           >
             {item.label} {item?.icon}
@@ -75,7 +75,7 @@ const Topbar = () => {
                 <div key={idx}>
                   <Link
                     href={dropdownItem?.href}
-                    className="hover:text-blue-600 flex gap-1 items-center px-4 py-3 duration-300"
+                    className="hover:text-brand flex gap-1 items-center px-4 py-3 duration-300"
                   >
                     {dropdownItem?.label}
                   </Link>

@@ -53,7 +53,7 @@ export default function ContactUs() {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm"
+                  className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
                 />
               </div>
               <div className="flex-1">
@@ -70,7 +70,7 @@ export default function ContactUs() {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm"
+                  className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
                 />
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function ContactUs() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm"
+                className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
               />
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function ContactUs() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="mt-1 block w-full border border-regular-300 rounded-md shadow-lg p-2 sm:text-sm"
+                className="mt-1 block w-full border border-regular-300 rounded-md shadow-lg p-2 sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
               ></textarea>
             </div>
             <div>
