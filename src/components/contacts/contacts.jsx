@@ -1,15 +1,15 @@
 "use client";
 
+import { checkEmailForValid } from "@/utils/appHelpers";
 import { useState } from "react";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     message: "",
   });
-
+  const isValidEmail = checkEmailForValid(formData.email);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -25,10 +25,7 @@ export default function ContactUs() {
   };
 
   const isDisbaled =
-    !formData.firstName ||
-    !formData.lastName ||
-    !formData.email ||
-    !formData.message;
+    !isValidEmail || !formData.name || !formData.email || !formData.message;
 
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
@@ -44,30 +41,13 @@ export default function ContactUs() {
                   htmlFor="firstName"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  First Name
+                  Name
                 </label>
                 <input
                   type="text"
                   name="firstName"
                   id="firstName"
                   value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
-                />
-              </div>
-              <div className="flex-1">
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  value={formData.lastName}
                   onChange={handleChange}
                   required
                   className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
@@ -90,6 +70,11 @@ export default function ContactUs() {
                 required
                 className="mt-1 block w-full border border-regular-300 p-2 rounded-md shadow-lg sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition- duration-300 ease-in-out"
               />
+              {formData?.email && !isValidEmail && (
+                <span className="text-red-500 text-sm py-2">
+                  Invalid email address
+                </span>
+              )}
             </div>
             <div>
               <label

@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={montserrat.className}>
         <NextTopLoader
-          color="#3B82F6"
+          color="#008a35"
           crawlSpeed={5}
           showSpinner={false}
           speed={5}
