@@ -7,9 +7,9 @@ import "swiper/css/autoplay";
 
 import { Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
-import AppButton from "@/UI/AppButton";
 import { slidersData } from "@/data/slidersData";
 import { truncateText } from "@/utils/appHelpers";
+import AppButton from "@/UI/AppButton";
 
 const HeaderSlider = () => {
   const handleCallback = () => {

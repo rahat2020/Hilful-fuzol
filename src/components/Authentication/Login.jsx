@@ -1,10 +1,10 @@
 "use client";
-import AppButton from "@/UI/AppButton";
 import { size } from "lodash";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Eye, EyeOff } from "react-feather";
 import { checkEmailForValid } from "@/utils/appHelpers";
+import AppButton from "@/UI/AppButton";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);

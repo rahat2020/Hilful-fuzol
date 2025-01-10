@@ -4,8 +4,8 @@
 
 import { X } from "react-feather";
 import React, { useRef } from "react";
-// import "@/styles/_mobile_modal.scss";
 import useMediaQuery from "@/hooks/useMediaQuery";
+// import "@/styles/_mobile_modal.scss";
 
 const AppModal = ({
   children,
@@ -28,14 +28,16 @@ const AppModal = ({
     isOpenForMultiModal = false,
     yAxisPosition = "center",
     modalMainClass = "",
-    footerClass = ""
-  } = {}
+    footerClass = "",
+  } = {},
 }) => {
   const modalRef = useRef(null);
   const modalCloseValue = isOpenForMultiModal ? {} : false;
   const isSmallHeight = useMediaQuery("(max-height: 750px)");
   const mainClass = drawerModal
-    ? `fixed bottom-0 rounded-t-xl h-[80vh] w-[95%] drawer-open-class ${isScrollingDrawerModal ? "overflow-y-auto no-scrollbar" : ""}`
+    ? `fixed bottom-0 rounded-t-xl h-[80vh] w-[95%] drawer-open-class ${
+        isScrollingDrawerModal ? "overflow-y-auto no-scrollbar" : ""
+      }`
     : `rounded-[10px] ${!isAppConfirmationModal && "desktop-style-class"}`;
 
   const handleModalClose = () => {
@@ -53,7 +55,7 @@ const AppModal = ({
     xl: "w-1/2",
     "2xl": "w-3/4",
     "3xl": "w-4/5",
-    full: "w-full"
+    full: "w-full",
   };
   const handleCloseModalOnOutsideClick = (event) => {
     if (event.target === event.currentTarget) {
@@ -72,8 +74,12 @@ const AppModal = ({
       <div
         className={`${mainClass} bg-white shadow-lg
          ${
-           modalSizeClass[size] === "w-full" ? modalMargin : modalSizeClass[size]
-         } ${modalMainClass} ${isScrollable && "overflow-y-auto no-scrollbar"} ${isSmallHeight ? "lg:max-h-full" : "lg:max-h-[80vh]"} lg:h-max 
+           modalSizeClass[size] === "w-full"
+             ? modalMargin
+             : modalSizeClass[size]
+         } ${modalMainClass} ${
+          isScrollable && "overflow-y-auto no-scrollbar"
+        } ${isSmallHeight ? "lg:max-h-full" : "lg:max-h-[80vh]"} lg:h-max 
            `}
         ref={modalRef}
       >
@@ -92,7 +98,9 @@ const AppModal = ({
         <div className={`${mainBodyPadding} rounded-2xl`}>{children}</div>
         {modalFooter && (
           <div
-            className={`${isModalFooterBg && "bg-white-light"} py-6 ${footerClass} rounded-b-lg`}
+            className={`${
+              isModalFooterBg && "bg-white-light"
+            } py-6 ${footerClass} rounded-b-lg`}
           >
             {customBtn}
           </div>

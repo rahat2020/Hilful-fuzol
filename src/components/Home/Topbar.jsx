@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { X, Lock, AlignRight } from "react-feather";
 import Image from "next/image";
 import SignInAndSignUp from "../authentication";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { usePathname } from "next/navigation";
 import { navData } from "@/src/data/navData";
 import AppButton from "@/src/UI/AppButton";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Topbar = () => {
   const pathname = usePathname();

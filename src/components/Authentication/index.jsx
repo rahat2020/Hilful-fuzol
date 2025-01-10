@@ -1,6 +1,6 @@
 "use client";
-import Login from "./Login";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import Login from "./Login";
 import AppModal from "@/UI/AppModal";
 
 const SignInAndSignUp = ({ setIsModalOpen }) => {
