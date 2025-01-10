@@ -23,12 +23,12 @@ const Testimonials = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className="relative bg-white text-center py-8">
+    <div className="relative bg-white text-center px-4 md:px-8 py-8">
       <ComponentHeader
-        title={"Testimonials"}
-        desc={"What Our well-wishers Says"}
-        titleClasses="text-4xl"
-        customStyles="text-4xl font-bold text-start mb-8 text-brand"
+        title="Testimonials"
+        desc="What Our well-wishers says"
+        titleClasses="md:text-40 text-32"
+        customStyles="text-48 font-bold text-start mb-8 text-brand"
       />
 
       <div className="relative flex items-center justify-center lg:justify-between">

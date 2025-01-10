@@ -17,7 +17,7 @@ const HeaderSlider = () => {
   };
 
   return (
-    <div className="h-screen w-full">
+    <div className="h-full w-full">
       <Swiper
         modules={[Pagination, Autoplay]}
         autoplay={{
@@ -48,10 +48,9 @@ const HeaderSlider = () => {
               <Image
                 src={slide?.image || "/assets/program-1.jpg"}
                 alt="Hero Image"
-                layout="fill"
+                fill
                 loading="lazy"
-                objectFit="cover"
-                className="brightness-50"
+                className="brightness-50 object-cover w-full h-full"
               />
               <div className="absolute inset-0 flex items-center justify-center pt-28 px-4 bg-gradient-to-t from-gray-900 to-transparent">
                 <div className="text-center text-white">

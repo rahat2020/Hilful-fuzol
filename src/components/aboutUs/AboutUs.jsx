@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Award, Users, TrendingUp } from "react-feather";
 import Faqs from "./Faqs";
 import { membersData } from "@/data/membersData";
+import ComponentHeader from "@/UI/ComponentHeader";
 
 const AboutUs = () => {
   return (
@@ -43,15 +44,14 @@ const AboutUs = () => {
       {/* Mission Section */}
       <section id="mission" className="py-20 px-4 md:px-8 max-w-6xl mx-auto">
         <div className="">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
-            Our Mission
-          </h2>
+          <ComponentHeader
+            title="Our Mission"
+            titleClasses="md:text-40 text-32"
+            customStyles="text-48 font-bold text-start mb-8 text-brand"
+          />
           <p className="text-xl text-gray-700 text-center max-w-4xl mx-auto leading-relaxed">
-            At TechInnovate, we're on a mission to harness the power of
-            cutting-edge technology to solve real-world problems. We believe in
-            creating solutions that not only meet the needs of today but
-            anticipate the challenges of tomorrow. Our commitment to innovation,
-            sustainability, and user-centric design drives everything we do.
+            Hilful Fozul is a non-profit an Islmic sunni organization that is
+            dedicated to helping the poor and needy people in the society.
           </p>
         </div>
       </section>
@@ -92,11 +92,14 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4 md:px-8 bg-white">
+      <section className="py-20 px-4 px-4 md:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Meet Our Leadership Team
-          </h2>
+          <ComponentHeader
+            title="Meet Our Leadership Team"
+            desc="What Our well-wishers says"
+            titleClasses="md:text-40 text-32"
+            customStyles="text-48 font-bold text-start mb-8 text-brand"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {membersData?.map((member, index) => (
               <div

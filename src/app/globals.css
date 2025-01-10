@@ -13,3 +13,20 @@
 .swiper-pagination-bullet-active {
   background-color: var(--brand-color) !important;
 }
+
+/* styles for scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #008a35;
+  border-radius: 8px;
+  border: 2px solid #f3f4f6;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e5e7eb;
+  border-radius: 8px;
+}

@@ -39,7 +39,15 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=100019575372017"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5 text-icons-facebook" />
+                <Image
+                  src={"/assets/facebook.png"}
+                  alt="facebook"
+                  width={100}
+                  height={80}
+                  quality={100}
+                  priority={true}
+                  className="w-6 h-6 rounded-md"
+                />{" "}
               </Link>
               {/* <Link href="#" aria-label="Twitter">
                 <Twitter className="w-5 h-5 text-icons-twitter" />

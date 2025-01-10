@@ -23,11 +23,11 @@ const Contents = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto px-4 py-6">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-6">
         <ComponentHeader
           title="Our Programms"
-          titleClasses="text-4xl"
-          customStyles="text-4xl font-bold text-start mb-8 text-brand px-0"
+          titleClasses="md:text-40 text-32"
+          customStyles="text-48 font-bold text-start mb-8 text-brand"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog) => {

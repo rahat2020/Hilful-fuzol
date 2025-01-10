@@ -4,18 +4,13 @@ import React, { useState } from "react";
 import { X, Lock, AlignRight } from "react-feather";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { navData } from "@/data/navData";
 import AppButton from "@/UI/AppButton";
 import SignInAndSignUp from "../Authentication";
 
 const Topbar = () => {
   const pathname = usePathname();
-  const isMobileScreen = useMediaQuery("(max-width: 768px");
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [pagesDropdownOpen, setPagesDropdownOpen] = useState(false);
-  const [speDropdownOpen, setSpeDropdownOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const links = (
@@ -59,15 +54,7 @@ const Topbar = () => {
         <div key={index} className="relative">
           <Link
             href={item?.href}
-            onClick={() => {
-              if (item.dropdown) {
-                if (item.label === "Pages") {
-                  setPagesDropdownOpen(!pagesDropdownOpen);
-                } else if (item.label === "Specialties") {
-                  setSpeDropdownOpen(!speDropdownOpen);
-                }
-              }
-            }}
+            onClick={() => setIsMobileMenuOpen(false)}
             className={`hover:text-blue-600 flex gap-1 items-center ${
               pathname === item?.href ? "text-blue-600" : ""
             }`}
@@ -79,8 +66,7 @@ const Topbar = () => {
           {item?.dropdown && (
             <div
               className={`w-48 left-0 top-6 mt-1 border rounded-sm transition-all duration-300 bg-white z-10 ${
-                (item.label === "Pages" && pagesDropdownOpen) ||
-                (item.label === "Specialties" && speDropdownOpen)
+                item.label === "Pages" || item.label === "Specialties"
                   ? "block"
                   : "hidden"
               }`}
@@ -103,36 +89,35 @@ const Topbar = () => {
     </>
   );
 
+  const handleCallbackForMobile = () => {
+    setIsModalOpen(true);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="bg-white ">
       <div className="px-4 lg:px-24 flex items-center justify-between text-sm md:text-[15px] py-4">
-        <div
-          className={`flex gap-4 items-center ${
-            isMobileScreen && "w-full justify-between"
-          }`}
-        >
+        <div className="flex gap-4 w-full md:w-auto items-center justify-between md:justify-center">
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-5xl text-blue-500"
+            className="md:hidden text-5xl text-brand"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X /> : <AlignRight />}
           </button>
 
           {/* Logo */}
-          <div className="">
-            <Link href="/">
-              <Image
-                src={"/assets/logo.jpg"}
-                alt="logo"
-                width={175}
-                height={80}
-                quality={100}
-                priority={true}
-                className="w-40 h-20 object-contain"
-              />
-            </Link>
-          </div>
+          <Link href="/">
+            <Image
+              src={"/assets/logo.jpg"}
+              alt="logo"
+              width={175}
+              height={80}
+              quality={100}
+              priority={true}
+              className="w-40 h-20 object-contain"
+            />
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
@@ -158,12 +143,13 @@ const Topbar = () => {
           {smallDeviceLinks}
           {/* Mobile Buttons */}
           <div className="flex w-[10rem] flex-col space-y-2">
-            <Link
-              href="/login"
-              className="bg-brand text-white hover:bg-white hover:text-brand px-4 py-2 rounded-md border font-semibold flex items-center gap-2 duration-300"
-            >
-              <Lock className="font-extra-bold text-16" /> Login
-            </Link>
+            <AppButton
+              withoutHrefBtn
+              text="Login"
+              icon={Lock}
+              callback={() => handleCallbackForMobile()}
+              customStyles="bg-brand text-white hover:bg-white hover:text-brand px-4 py-2 rounded-md border font-semibold flex items-center gap-2 duration-300"
+            />
           </div>
         </div>
       )}

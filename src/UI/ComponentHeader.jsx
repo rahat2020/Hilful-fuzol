@@ -6,7 +6,7 @@ const ComponentHeader = ({
   descClasses = "",
 }) => {
   return (
-    <div className={`text-center px-10 ${customStyles}`}>
+    <div className={`text-center ${customStyles}`}>
       <p className={`font-semibold text-brand  ${titleClasses || "text-28"}`}>
         {title}
       </p>
