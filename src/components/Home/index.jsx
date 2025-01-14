@@ -1,5 +1,5 @@
 "use client";
-import Contents from "@/components/contents/Contents";
+import Contents from "@/components/Home/Contents";
 import HeaderSlider from "@/components/Home/HeaderSlider";
 import Testimonials from "@/components/Home/Testimonials";
 

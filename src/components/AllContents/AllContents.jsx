@@ -10,7 +10,7 @@ import useScreenSize from "@/hooks/useScreenSize";
 import { getPlayerDimensions } from "@/utils/appHelpers";
 import ComponentHeader from "@/UI/ComponentHeader";
 
-const Contents = () => {
+const AllContents = () => {
   const screenSize = useScreenSize();
   const { width, height } = getPlayerDimensions(screenSize);
   const [hasWindow, setHasWindow] = useState(false);
@@ -98,12 +98,6 @@ const Contents = () => {
                     {description}
                   </p>
                   <div className="flex items-center justify-between mt-5 text-gray-800 text-sm">
-                    <Link
-                      href={`/blogs/${id}`}
-                      className="transition-colors hover:text-blue-500 font-semibold"
-                    >
-                      Read More →
-                    </Link>
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center space-x-1">
                         <MessageCircle size={16} />
@@ -129,4 +123,4 @@ const Contents = () => {
   );
 };
 
-export default Contents;
+export default AllContents;
