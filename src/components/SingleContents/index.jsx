@@ -11,11 +11,11 @@ const SingleArticleContents = ({ params }) => {
   const article = {
     title: "The Future of Web Development: Trends to Watch in 2023",
     author: {
-      name: "Jane Doe",
+      name: "MD. Ramzan",
       bio: "Jane is a senior web developer with over 10 years of experience in creating cutting-edge web applications.",
       avatar: "/placeholder.svg?height=100&width=100",
     },
-    date: "2023-05-15",
+    date: "2025-01-15",
     content: `
       <p>The web development landscape is constantly evolving, with new technologies and methodologies emerging at a rapid pace. As we move further into 2023, several trends are shaping the future of web development. Let's explore some of the most significant ones:</p>
 
@@ -36,7 +36,7 @@ const SingleArticleContents = ({ params }) => {
     `,
     slug: params,
     readingTime: "5 min read",
-    tags: ["Web Development", "Technology Trends", "Frontend", "Backend"],
+    tags: ["Mahfil", "Hilful fuzul", "Program", "Outing"],
   };
 
   const relatedArticles = [

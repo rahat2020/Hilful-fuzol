@@ -1,9 +1,31 @@
+import AppBreadcrumb from "@/UI/AppBreadCrumb";
 import Image from "next/image";
 import { Calendar, Clock, Tag, User } from "react-feather";
 
 const Article = ({ article }) => {
+  const breadcrumbList = [
+    {
+      title: "All Contents",
+      href: "/templates",
+    },
+    {
+      title: article.title,
+      activeLink: true,
+    },
+  ];
   return (
     <article className="prose lg:prose-xl max-w-none">
+      {breadcrumbList.map((item, index) => (
+        <AppBreadcrumb
+          key={item.title}
+          breadcrumbList={breadcrumbList}
+          item={item}
+          index={index}
+          href={item.href}
+          breadcrumbListLength={breadcrumbList.length}
+        />
+      ))}
+
       <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
       <div className="flex flex-wrap items-center text-gray-600 mb-4 gap-4">
         <div className="flex items-center">
@@ -30,14 +52,17 @@ const Article = ({ article }) => {
           </span>
         ))}
       </div>
-      <Image
-        src={"/assets/program-1.jpg"}
-        alt="content image"
-        width={200}
-        height={200}
-        loading="lazy"
-        className="w-[50%] h-48 object-fill rounded-lg mb-6"
-      />
+      <div className="flex justify-center items-center">
+        <Image
+          src={"/assets/program-1.jpg"}
+          alt="content image"
+          width={200}
+          height={200}
+          loading="lazy"
+          className="md:w-[50%] w-full h-full md:h-[30%] object-cover rounded-lg mb-6"
+        />
+      </div>
+
       <div
         className="mt-6"
         dangerouslySetInnerHTML={{ __html: article.content }}

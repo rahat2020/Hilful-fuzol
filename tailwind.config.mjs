@@ -24,6 +24,7 @@ module.exports = {
   theme: {
     fontFamily: {
       montserrat: ["var(--font-montserrat)"],
+      sutono: ["SutonoMJ", "sans-serif"],
     },
     screens: {
       xs: "320px",

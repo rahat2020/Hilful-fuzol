@@ -107,7 +107,7 @@ const Topbar = () => {
           </button>
           <div className="md:hidden w-full">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-              <p className="text-14 font-bold text-center">
+              <p className="text-14 font-bold text-center font-sutono">
                 খুরুশিয়া হিলফুল ফুযুল পরিষদ
               </p>
               <p className="text-13 font-bold text-brand text-center">

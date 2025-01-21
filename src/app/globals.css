@@ -30,3 +30,12 @@
   background-color: #e5e7eb;
   border-radius: 8px;
 }
+
+@font-face {
+  font-family: "SutonoMJ";
+  src: url("/assets/fonts/SutonoMJ.woff2") format("woff2"),
+    url("/assets/fonts/SutonoMJ.woff") format("woff"),
+    url("/assets/fonts/SutonoMJ.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
