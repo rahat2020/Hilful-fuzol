@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
 import React, { useState } from "react";
-import { X, Lock, AlignRight } from "react-feather";
+import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { X, Lock, AlignRight } from "react-feather";
 import { navData } from "@/data/navData";
 import AppButton from "@/UI/AppButton";
 import SignInAndSignUp from "../Authentication";
@@ -111,7 +111,7 @@ const Topbar = () => {
                 খুরুশিয়া হিলফুল ফুযুল পরিষদ
               </p>
               <p className="text-13 font-bold text-brand text-center">
-                Khurishia Hilful Fuzol Parishod
+                Khurushia Hilful Fuzul Parishod
               </p>
               <p className="text-10 text-center font-bold text-gray-700">
                 (It's a social, vuluntary, educational org.)

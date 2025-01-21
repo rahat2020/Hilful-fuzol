@@ -6,6 +6,7 @@ import GoToTop from "@/UI/GotoTop";
 import { StoreProvider } from "@/redux/StoreProvider";
 import Topbar from "../components/Home/Topbar";
 import Footer from "../components/Home/Footer";
+import { ToastContainer } from "react-toastify";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
             {children}
             <GoToTop />
             <Footer />
+            <ToastContainer />
           </StoreProvider>
         </Suspense>
       </body>
