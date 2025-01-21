@@ -5,6 +5,7 @@ import { size } from "lodash";
 import emailjs from "@emailjs/browser";
 import toastAlert from "@/utils/toastConfig";
 import { checkEmailForValid } from "@/utils/appHelpers";
+import Image from "next/image";
 
 export default function ContactUs() {
   const formRef = useRef();
@@ -60,8 +61,16 @@ export default function ContactUs() {
     !formData.message;
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md mx-auto bg-white rounded-lg shadow-2xl overflow-hidden">
+    <div className="relative min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <Image
+        src="/assets/program-1.jpg"
+        alt="Hero Image"
+        layout="fill"
+        loading="lazy"
+        objectFit="cover"
+        className="brightness-50"
+      />
+      <div className="max-w-md mx-auto p-8 absolute md:inset-0 bg-white rounded-lg shadow-2xl overflow-hidden">
         <div className="px-6 py-8">
           <h2 className="text-3xl font-extrabold text-center text-brand mb-6">
             Contact Us
